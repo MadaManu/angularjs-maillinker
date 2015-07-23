@@ -1,10 +1,16 @@
+'use strict';
 angular.module('maillinker', []);
 (function() {
   'use strict';
   var DataService = function($q) {
     return {
       getProviders : function() {
-        console.log("FUNCTION CALL!");
+        // $http.get('/api/people/pikachu').success(function(data) {
+        //   $scope.name = data.name;
+        // }).error(function(data) {
+        //   $scope.name = data;
+        // });
+        console.log("FUNCTION CALL! A");
         return true;
       }
     }
@@ -13,17 +19,12 @@ angular.module('maillinker', []);
 
   angular.module('maillinker').service('DataService', DataService);
 })();
-(function() {
-  'use strict';
-  var MailLinkerService = function($q, DataService) {
+angular.module('maillinker')
+  .factory('MailLinkerService', ['$q','$rootScope','$window',function ($q,$rootScope,$window) {
     return {
-      test : function(options) {
-        console.log("FUNCTION CALL!");
+      test: function () {
+        console.log("FUNCTION CALL! B");
         return true;
       }
-    }
-  };
-  MailLinkerService.$inject = ['$q', 'DataService'];
-
-  angular.module('maillinker').service('MailLinkerService', MailLinkerService);
-})();
+    };
+}]);
