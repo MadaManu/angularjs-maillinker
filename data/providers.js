@@ -1,23 +1,3 @@
-'use strict';
-angular.module('maillinker', []);
-angular.module('maillinker')
-  .factory('DataService', function (providers) {
-    return {
-      getProviders: function () {
-        void 0;
-        return true;
-      }
-    };
-});
-angular.module('maillinker')
-  .factory('MailLinkerService', function () {
-    return {
-      test: function () {
-        void 0;
-        return true;
-      }
-    };
-});
 angular.module('maillinker')
   .constant('providers',{ "data": [
 

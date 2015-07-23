@@ -9,11 +9,6 @@ var rename = require('gulp-rename');
 var gutil = require('gulp-util');
 var runSequence = require('run-sequence');
 
-// gulp.task('clean', function() {
-//   return gulp.src('bulid')
-//     .pipe(clean({force: true}));
-// });
-
 gulp.task('clean', function (cb) {
   del([
     'build/**'
@@ -27,7 +22,8 @@ gulp.task('build', function(callback) {
 gulp.task('build-js', function() {
   return gulp.src([
       'app.js',
-      'services/*.js'
+      'services/*.js',
+      'data/providers.js'
     ])
     .pipe(concat('angularjs-maillinker.debug.js'))
     .pipe(gulp.dest('build/scripts'))

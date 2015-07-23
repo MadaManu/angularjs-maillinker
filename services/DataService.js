@@ -1,9 +1,9 @@
 angular.module('maillinker')
-  .factory('DataService', ['$q',function ($q) {
+  .factory('DataService', function (providers) {
     return {
       getProviders: function () {
-        console.log("get providers!!!");
+        console.log(providers.data);
         return true;
       }
     };
-}]);
+});

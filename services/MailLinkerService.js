@@ -1,9 +1,13 @@
 angular.module('maillinker')
-  .factory('MailLinkerService', ['$q','$rootScope','$window',function ($q,$rootScope,$window) {
+  .factory('MailLinkerService', function () {
     return {
-      test: function () {
-        console.log("FUNCTION CALL! B");
+      getProviderByEmailAddress: function () {
+        console.log("function a");
+        return true;
+      },
+      getProviderByDomain: function () {
+      	console.log("function b");
         return true;
       }
     };
-}]);
+});
