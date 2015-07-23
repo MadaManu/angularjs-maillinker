@@ -1,14 +1,9 @@
-(function() {
-  'use strict';
-  var MailLinkerService = function($q) {
+angular.module('maillinker')
+  .factory('MailLinkerService', ['$q','$rootScope','$window',function ($q,$rootScope,$window) {
     return {
-      test : function(options) {
-        console.log("FUNCTION CALL!");
+      test: function () {
+        console.log("FUNCTION CALL! B");
         return true;
       }
-    }
-  };
-  MailLinkerService.$inject = ['$q'];
-
-  angular.module('maillinker').service('MailLinkerService', MailLinkerService);
-})();
+    };
+}]);
