@@ -1,6 +1,6 @@
 {
   "name": "angularjs-maillinker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "build/scripts/angularjs-maillinker.js",
   "dependencies": {
     "gulp": "^3.8.0"
