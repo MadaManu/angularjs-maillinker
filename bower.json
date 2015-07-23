@@ -1,0 +1,16 @@
+{
+  "name": "angularjs-maillinker",
+  "version": "0.1.0",
+  "main": "app.js",
+  "homepage": "https://github.com/MadaManu/angularjs-maillinker",
+  "authors": [
+    "MadaManu <madalindruta92@gmail.com>"
+  ],
+  "description": "AngularJS service to provide the url for checking email based on email domain.",
+  "keywords": [
+    "angularjs",
+    "mail-url",
+    "mail-domains"
+  ],
+  "license": "MIT"
+}
