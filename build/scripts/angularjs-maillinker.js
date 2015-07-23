@@ -4,20 +4,43 @@ angular.module('maillinker')
   .factory('DataService', function (providers) {
     return {
       getProviders: function () {
-        void 0;
-        return true;
+        var providersArray = providers.data;
+
+        for (var i = providersArray.length; i >= 0; i--) {
+            // removal of comments
+            if(typeof providersArray[i] === 'string' || providersArray[i] instanceof String){
+              providersArray.splice(i, 1);
+            }
+        }
+
+        return providersArray;
       }
     };
 });
 angular.module('maillinker')
-  .factory('MailLinkerService', function () {
-    return {
-      test: function () {
-        void 0;
-        return true;
-      }
-    };
-});
+  	.factory('MailLinkerService', function (DataService) {
+	    var getProviderByDomain = function (domain){
+	      var providersArray = DataService.getProviders();
+	      return providersArray.filter(function( obj ) {
+	        // replace ' '(spaces) in regex with | (or) for a valid regex
+	          var re = new RegExp(obj.domains.replace(/ /g,"|"));
+	          return re.test(domain);
+	      })[0]; // assuming there is only one match
+
+	    };
+	    return {
+	      getProviderByEmailAddress: function (email) {
+	        var emailExplode = email.split("@");
+	        if(emailExplode.length > 2 || emailExplode.length < 2){
+	          return false; // not valid email
+	        }
+	        return getProviderByDomain(emailExplode[1]);
+	      },
+	      getProviderByDomain: function (domain) {
+	        return getProviderByDomain(domain);
+	      }
+	    };
+	});
 angular.module('maillinker')
   .constant('providers',{ "data": [
 
